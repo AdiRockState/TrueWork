@@ -1,3 +1,4 @@
+// SidebarWithLogo.js
 import React from "react";
 import {
   Card,
@@ -27,6 +28,11 @@ export default function SidebarWithLogo({ sidebarOpen, toggleSidebar, toggleModa
   const handleWishlistClick = () => {
     navigate('/wishlist');
   };
+
+  const handleInsightsClick = () => {
+    navigate('/insights');
+  };
+
   return (
     <div className="h-full">
       <IconButton
@@ -67,6 +73,12 @@ export default function SidebarWithLogo({ sidebarOpen, toggleSidebar, toggleModa
               <Cog6ToothIcon className="h-5 w-5" />
             </ListItemPrefix>
             Help
+          </ListItem>
+          <ListItem onClick={handleInsightsClick}> {/* Update this line */}
+            <ListItemPrefix>
+              <Cog6ToothIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Insights
           </ListItem>
           <ListItem>
             <ListItemPrefix>
