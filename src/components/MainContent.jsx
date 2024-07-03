@@ -69,6 +69,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
               </div>
             } />
             <Route path="/wishlist" element={<WishList />} />
+            <Route path="/requirement" element={<Requirement />} />
           </Routes>
         </div>
       </div>
