@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.table-container {
+    border-radius: 12px;
+  }
+  
+  .project-table-header {
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 150%;
+    color: var(--Neutrals-Grey-600, var(--Neutrals-Neutrals600, #726C6C));
+  }
+  
+  .project-table-cell {
+    font-family: Lato;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--Neutrals-Grey-900, var(--Neutrals-Neutrals900, #2B2928));
+  }
+
+  .project-table-cell-2 {
+    font-family: Lato;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--Neutrals-Grey-600, var(--Neutrals-Neutrals600, #726C6C));
+}
+
+.status-cell {
+    border-radius: 4px;
+  }
+  
+  .status-not-interested {
+    background-color: var(--Error-Error200, #F9ABB9);
+  }
+  
+  .status-not-discussed {
+    background-color: var(--Alert-Alert300, #FBDD97);
+  }
+  
+  .status-default {
+    background-color: var(--Success-Success200, #B6F7D4);
+  }
+  

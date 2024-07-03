@@ -1,0 +1,13 @@
+.sidebar {
+    width: 16rem; /* Fixed width for the sidebar */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for showing/hiding */
+  }
+  
+  .sidebar.hidden {
+    transform: translateX(-100%); /* Hide sidebar by shifting it to the left */
+  }
+  
+  .sidebar.block {
+    transform: translateX(0); /* Show sidebar by shifting it to the original position */
+  }
+  
