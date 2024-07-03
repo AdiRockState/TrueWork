@@ -1,19 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Card,
   CardHeader,
   CardBody,
   CardFooter,
   Typography,
-  Button,
   IconButton
 } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom';
+import truSelected from '/icons-1/truselected.svg';
+import sitevisit from '/icons-1/sitevisit.svg';
+import rerasel from '/icons-1/Rera.svg';
+import imshared from '/icons-1/IMShared.svg';
+import compoff from '/icons-1/Property 1=default.svg'; 
+import compon from '/icons-1/Property 1=Fill.svg'; 
+import seloff from '/icons-1/Selected=Off.svg'; 
+import selon from '/icons-1/Selected=On.svg'; 
+
 
 export function PropCard({ project }) {
   const {
     "Project Name": projectName,
-    "Developer": developer,
     "Strategy": strategy,
     "Investment Type": investmentType,
     "Cost": cost,
@@ -28,66 +35,70 @@ export function PropCard({ project }) {
     navigate('/financial', { state: { projectName, projectCost: cost } });
   };
 
+  const [A, setA] = useState({
+    p1: false,
+    p2: false,
+  });
+
+  const handleClick = (key) => {
+    setA((prevState) => ({
+      ...prevState,
+      [key]: !prevState[key],
+    }));
+  };
+
+
   return (
-    <Card className="w-full max-w-[26rem] shadow-lg">
-      <CardHeader floated={false} color="blue-gray">
+    <Card className="w-full max-w-[24rem] shadow-lg ml-4 mr-4">
+      <CardHeader floated={false} color="blue-gray" className="relative h-56 mx-0 rounded-t-lg rounded-b-none">
         <img
           src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           alt={projectName}
+          className="h-full w-full object-cover"
         />
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
-        <IconButton
-          size="sm"
-          color="red"
-          variant="text"
-          className="!absolute top-4 right-4 rounded-full"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-6 w-6"
-          >
-            <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-          </svg>
-        </IconButton>
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60" />
+        <div className="absolute top-4 left-4 flex space-x-2">
+          <img src={truSelected}/>
+          <img src={rerasel}/>
+        </div>
+        <div className="absolute bottom-4 left-4 flex space-x-2">
+          <img src={imshared}/>
+          <img src={sitevisit}/>
+        </div>
+        <div className="absolute top-4 right-4 flex space-x-2">
+        <img src={A.p1 ? compon : compoff} onClick={() => handleClick('p1')} alt="Compare" />
+        <img src={A.p2 ? selon : seloff} onClick={() => handleClick('p2')} alt="Star" />
+        </div>
       </CardHeader>
-      <CardBody>
-        <div className="mb-3 flex items-center justify-between">
+      <CardBody className="pt-2">
+        <div className="mb-3">
           <Typography variant="h5" color="blue-gray" className="font-medium">
             {projectName}
           </Typography>
-          <Typography color="blue-gray" className="font-normal">
-            {developer}
+          <Typography color="gray" className="font-normal">
+            HSR Layout
           </Typography>
         </div>
-        <Typography color="gray" className="mb-2">
-          Strategy: {strategy} | Inv. Type: {investmentType}
-        </Typography>
-        <div className="grid grid-cols-2 gap-4">
+        
+        <div className="grid grid-cols-4 gap-4">
           <div>
             <Typography variant="small" className="font-semibold">Min. Inv</Typography>
-            <Typography>{cost}</Typography>
-          </div>
-          <div>
-            <Typography variant="small" className="font-semibold">Avg. Price</Typography>
-            <Typography>{averagePrice}</Typography>
+            <Typography>₹{cost}</Typography>
           </div>
           <div>
             <Typography variant="small" className="font-semibold">Tenure</Typography>
-            <Typography>{tenure}</Typography>
+            <Typography>{tenure} Year</Typography>
           </div>
           <div>
             <Typography variant="small" className="font-semibold">IRR</Typography>
-            <Typography>{irr}</Typography>
+            <Typography>{irr}%</Typography>
+          </div>
+          <div>
+            <Typography variant="small" className="font-semibold">IRR</Typography>
+            <Typography>{irr}%</Typography>
           </div>
         </div>
       </CardBody>
-      <CardFooter className="pt-3">
-        <Button size="lg" fullWidth={true} onClick={handleViewMore}>
-          View More
-        </Button>
-      </CardFooter>
     </Card>
   );
 }
