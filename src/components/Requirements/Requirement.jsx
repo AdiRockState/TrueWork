@@ -1,16 +1,43 @@
 import React, { useState } from 'react';
 import RequirementForm from './RequirementForm';
-import tickIcon from './tick.svg';
-import deleteIcon from './delete.svg';
+import tickIcon from '/icons-1/WhiteTick.svg';
+import deleteIcon from '/icons-1/trash.svg';
 import styles from './requirement.module.css';
 
 const Requirement = () => {
-  const [requirements, setRequirements] = useState([{ id: 1, name: '', description: '' }]);
+  const [requirements, setRequirements] = useState([{
+    id: 1,
+    budget: '',
+    propertyType: [],
+    tenure: '',
+    investmentGoal: [],
+    builderCategory: [],
+    investmentTimeline: '',
+    propertyStage: [],
+    investmentType: [],
+    microMarket: '',
+    loanRequired: '',
+    additionalInfo: ''
+  }]);
+
   const [activeTab, setActiveTab] = useState(1);
 
   const addRequirement = () => {
     const newId = requirements.length + 1;
-    setRequirements([...requirements, { id: newId, name: '', description: '' }]);
+    setRequirements([...requirements, {
+      id: newId,
+      budget: '',
+      propertyType: [],
+      tenure: '',
+      investmentGoal: [],
+      builderCategory: [],
+      investmentTimeline: '',
+      propertyStage: [],
+      investmentType: [],
+      microMarket: '',
+      loanRequired: '',
+      additionalInfo: ''
+    }]);
     setActiveTab(newId);
   };
 
@@ -44,14 +71,11 @@ const Requirement = () => {
             className={`${styles.tabButton} ${activeTab === req.id ? styles.activeTab : ''}`}
             onClick={() => setActiveTab(req.id)}
           >
-            {req.id === activeTab && <img src={tickIcon} alt="Tick Icon" className="w-4 h-4 mr-2" />}
             Requirement {req.id}
           </button>
         ))}
         <button className={`${styles.tabButton}`} onClick={addRequirement}>
-          <span className={`${styles.addButton} px-2 py-1`}>
-            <img src={tickIcon} alt="Tick Icon" className="w-4 h-4" />
-          </span>
+          <span className={`${styles.addButton} px-2 py-1`}>+</span>
         </button>
       </div>
       <div className="flex-grow overflow-y-auto p-4">
@@ -65,11 +89,13 @@ const Requirement = () => {
         ))}
       </div>
       <div className={styles.bottomPanel}>
-        <button className={styles.saveButton} onClick={saveRequirements}>
-          <img src={tickIcon} alt="Tick Icon" className="w-4 h-4 mr-2" /> Save
+        <button className={`${styles.saveButton} flex items-center`} onClick={saveRequirements}>
+          <img src={tickIcon} alt="Tick Icon" className="w-4 h-4" /> 
+          <span className="ml-2">Save</span>
         </button>
-        <button className={styles.deleteButton} onClick={deleteRequirement}>
-          <img src={deleteIcon} alt="Delete Icon" className="w-4 h-4 mr-2" /> Delete
+        <button className={`${styles.deleteButton} flex items-center`} onClick={deleteRequirement}>
+          <img src={deleteIcon} alt="Delete Icon" className="w-4 h-4" /> 
+          <span className="ml-2">Delete</span>
         </button>
       </div>
     </div>

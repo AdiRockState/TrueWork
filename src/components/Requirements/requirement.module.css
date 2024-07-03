@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .tabs {
     display: flex;
     gap: 1rem;
@@ -56,4 +58,24 @@
   
   .deleteButton {
     color: var(--Neutrals-Grey-900, var(--Neutrals-Neutrals900, #2B2928));
+  }
+
+  .button {
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--Neutrals-Neutrals200, #CCCBCB); /* 1px converted to rem */
+    background: var(--Neutrals-Base-White, #FAFAFA);
+    color: var(--Neutrals-Grey-900, var(--Neutrals-Neutrals900, #2B2928));
+    font-family: Lato;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    padding: 0.625rem 1rem;
+    display: flex;
+    align-items: center;
+    margin: 0.25rem;
+  }
+  
+  .selected {
+    background: var(--Secondary-Secondary300, #F8C7A0) !important;
   }
