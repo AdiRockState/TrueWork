@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import dayjs from "dayjs";
+import styles from './Schedule.module.css'
 
 const ScheduleMeeting = () => {
   const [discussion, setDiscussion] = useState("");
@@ -56,6 +57,9 @@ const ScheduleMeeting = () => {
         <h2 className="text-xl font-bold mb-4">Schedule Meeting</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col">
+            <p>
+                What do you want to discuss?
+            </p>
             <textarea
               className="w-full p-2 border rounded mb-4 flex-grow"
               placeholder="I want to discuss about tata's new project"
@@ -82,7 +86,7 @@ const ScheduleMeeting = () => {
               {days.map((day, index) => (
                 <button
                   key={index}
-                  className={`p-2 border rounded ${selectedDay === index ? "border-blue-500 bg-orange-200" : "border-gray-300"}`}
+                  className={`p-2 border rounded ${styles.button} ${selectedDay === index ? styles.day_selected : ""}`}
                   onClick={() => setSelectedDay(index)}
                 >
                   {day.format("ddd DD")}
@@ -93,7 +97,7 @@ const ScheduleMeeting = () => {
               {times.map((time, index) => (
                 <button
                   key={index}
-                  className={`p-2 border rounded ${selectedTime === time ? "bg-green-500 text-white" : "bg-white-200"}`}
+                  className={`p-2 border rounded ${styles.button} ${selectedTime === time ? styles.time_selected : ''}`}
                   onClick={() => setSelectedTime(time)}
                 >
                   {time}

@@ -1,0 +1,24 @@
+.button {
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--Neutrals-Neutrals200, #CCCBCB); /* 1px converted to rem */
+    background: var(--Neutrals-Base-White, #FAFAFA);
+    color: var(--Neutrals-Grey-900, var(--Neutrals-Neutrals900, #2B2928));
+    font-family: Lato;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* padding: 0.5rem 0.875rem; */
+    display: flex;
+    align-items: center;
+    margin: 0.25rem;
+  }
+  
+  .time_selected {
+    background: var(--Primary-Dark-Green-P, #153E3B) !important;
+    color: white;
+  }
+
+  .day_selected {
+    background: var(--Secondary-Secondary300, #F8C7A0);
+  }
