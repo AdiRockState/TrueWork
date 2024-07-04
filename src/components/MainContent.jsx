@@ -10,8 +10,8 @@ import { Typography } from '@material-tailwind/react';
 import HelpModal from './Help/HelpModal';
 import WishList from './WishList/WishList';
 import BlogPage from './Blog/BlogPage'; 
-import Requirement from './Requirement/Requirement';
-
+import Requirement from './Requirements/Requirement';
+import ScheduleMeeting from './ScheduleMeeting/ScheduleMeeting';
 function MainContent({ view, projects, handleSearch, handleFilterChange, filters, setMinInvestment, toggleView, loadMoreProjects, totalProjects }) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -74,6 +74,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/insights" element={<BlogPage />} /> {/* Add this line */}
             <Route path="/requirement" element={<Requirement />} />
+            <Route path="/schedule" element={<ScheduleMeeting />} />
           </Routes>
         </div>
       </div>

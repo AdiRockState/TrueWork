@@ -4,7 +4,6 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Typography,
   IconButton
 } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom';
@@ -72,30 +71,33 @@ export function PropCard({ project }) {
       </CardHeader>
       <CardBody className="pt-4">
         <div className="mb-3">
-          <Typography variant="h5" className={`font-large ${styles['proj-name']}`}>
+          <h5 variant="h5" className={`font-large ${styles['proj-name']}`}>
             {projectName}
-          </Typography>
-          <Typography color="gray" className="font-medium">
+          </h5>
+          <p >
+
+          </p>
+          <p color="gray" className={`${styles.proj_address}`}>
             HSR Layout
-          </Typography>
+          </p>
         </div>
         
         <div className="grid grid-cols-4 gap-4">
           <div>
-            <Typography variant="small" className="font-semibold">Min. Inv</Typography>
-            <Typography>₹{cost}</Typography>
+            <p variant="small" className={`${styles.proj_detail_type}`}>Min. Inv</p>
+            <p className={`${styles.proj_detail_type_val}`}>₹{cost}</p>
           </div>
           <div>
-            <Typography variant="small" className="font-semibold">Tenure</Typography>
-            <Typography>{tenure} Year</Typography>
+            <p variant="small" className={`${styles.proj_detail_type}`}>Tenure</p>
+            <p className={`${styles.proj_detail_type_val}`}>{tenure} Year</p>
           </div>
           <div>
-            <Typography variant="small" className="font-semibold">IRR</Typography>
-            <Typography>{irr}%</Typography>
+            <p variant="small" className={`${styles.proj_detail_type}`}>IRR</p>
+            <p className={`${styles.proj_detail_type_val}`}>{irr}%</p>
           </div>
           <div>
-            <Typography variant="small" className="font-semibold">IRR</Typography>
-            <Typography>{irr}%</Typography>
+            <p variant="small" className={`${styles.proj_detail_type}`}>IRR</p>
+            <p className={`${styles.proj_detail_type_val}`}>{irr}%</p>
           </div>
         </div>
       </CardBody>

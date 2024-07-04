@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RequirementForm from './RequirementForm';
-import tickIcon from './tick.svg';
-import deleteIcon from './delete.svg';
+import tickIcon from '/icons-1/Tick.svg';
+import deleteIcon from '/icons-1/trash.svg';
 import styles from './requirement.module.css';
 
 const Requirement = () => {
