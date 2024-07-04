@@ -1,4 +1,3 @@
-// SidebarWithLogo.js
 import React from "react";
 import {
   Card,
@@ -48,45 +47,49 @@ export default function SidebarWithLogo({ sidebarOpen, toggleSidebar, toggleModa
             TruEstate
           </Typography>
         </div>
-        <List>
-          <Typography variant="h6" color="gray">
-            TruEstate
-          </Typography>
-          <hr className="my-2 border-blue-gray-50" />
-          <ListItem>
-            <ListItemPrefix>
-              <InboxIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Inbox
-            <ListItemSuffix>
-              <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
-            </ListItemSuffix>
-          </ListItem>
-          <ListItem onClick={handleWishlistClick}>
-            <ListItemPrefix>
-              <UserCircleIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Wishlist
-          </ListItem>
-          <ListItem onClick={toggleModal}>
-            <ListItemPrefix>
-              <Cog6ToothIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Help
-          </ListItem>
-          <ListItem onClick={handleInsightsClick}> {/* Update this line */}
-            <ListItemPrefix>
-              <Cog6ToothIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Insights
-          </ListItem>
-          <ListItem>
-            <ListItemPrefix>
-              <PowerIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Log Out
-          </ListItem>
-        </List>
+        <div className="flex flex-col justify-between h-full">
+          <List>
+            <Typography variant="h6" color="gray">
+              TruEstate
+            </Typography>
+            <hr className="my-2 border-blue-gray-50" />
+            <ListItem>
+              <ListItemPrefix>
+                <InboxIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              Inbox
+              <ListItemSuffix>
+                <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
+              </ListItemSuffix>
+            </ListItem>
+            <ListItem onClick={handleWishlistClick}>
+              <ListItemPrefix>
+                <UserCircleIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              Wishlist
+            </ListItem>
+            <ListItem onClick={toggleModal}>
+              <ListItemPrefix>
+                <Cog6ToothIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              Help
+            </ListItem>
+            <ListItem onClick={handleInsightsClick}>
+              <ListItemPrefix>
+                <Cog6ToothIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              Insights
+            </ListItem>
+          </List>
+          <List className="absolute bottom-0">
+            <ListItem className="border">
+              <ListItemPrefix>
+                <PowerIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              Log Out
+            </ListItem>
+          </List>
+        </div>
       </Card>
     </div>
   );
