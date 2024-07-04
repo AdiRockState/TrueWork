@@ -10,7 +10,7 @@ import { Typography } from '@material-tailwind/react';
 import HelpModal from './Help/HelpModal';
 import WishList from './WishList/WishList';
 import BlogPage from './Blog/BlogPage'; 
-import Requirement from './Requirements/Requirement';
+import Requirement from './Requirementss/Requirement';
 import ScheduleMeeting from './ScheduleMeeting/ScheduleMeeting';
 function MainContent({ view, projects, handleSearch, handleFilterChange, filters, setMinInvestment, toggleView, loadMoreProjects, totalProjects }) {
   const location = useLocation();
@@ -37,7 +37,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
               TruEstate
             </Typography>
           </div>
-          <div className="h-10vh bg-white-100 border-b-2 border-gray-300 flex items-center">
+          {/* <div className="h-10vh bg-white-100 border-b-2 border-gray-300 flex items-center">
             <SearchBar
               onSearch={handleSearch}
               onFilterChange={handleFilterChange}
@@ -51,7 +51,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
             >
               {view === 'grid' ? 'Map' : 'Grid'}
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="flex-grow overflow-auto">
           <Routes>
