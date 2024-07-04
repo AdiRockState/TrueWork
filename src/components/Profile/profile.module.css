@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.heading {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem; /* 18px */
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5; /* 150% / 27px */
+  }
+  
+  .subheading {
+    color: var(--Neutrals-Base-Black, #0A0B0A);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5; /* 150% / 21px */
+  }
+
+  .button {
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--Neutrals-Neutrals200, #CCCBCB); /* 1px converted to rem */
+    background: var(--Neutrals-Base-White, #FAFAFA);
+    color: var(--Neutrals-Grey-900, var(--Neutrals-Neutrals900, #2B2928));
+    font-family: Lato;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    padding: 0.5rem 0.875rem;
+    display: flex;
+    align-items: center;
+    margin: 0.25rem;
+  }
+  
+  .selected {
+    background: var(--Secondary-Secondary300, #F8C7A0) !important;
+  }
+
+  .button2{
+    border-radius: 0.25rem;
+    border: 1px solid var(--Primary-Dark-Green-P, #153E3B);
+    padding: 0.5rem 2rem;
+  }
+
+  .button2_txt{
+    color: var(--Primary-Dark-Green-P, var(--Primary-Primary, #153E3B));
+    text-align: center;
+    /* Label/Small */
+    font-family: Lato;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 21px */
+  }
