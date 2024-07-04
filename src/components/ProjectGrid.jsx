@@ -17,7 +17,7 @@ const ProjectGrid = ({ projects, loadMoreProjects, totalProjects }) => {
   }, [loadMoreProjects, projects.length, totalProjects]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 ml-4 mr-4">
       {projects.map((project, index) => (
         <div
           key={project['Internal ID']}

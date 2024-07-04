@@ -16,7 +16,7 @@ import compoff from '/icons-1/Property 1=default.svg';
 import compon from '/icons-1/Property 1=Fill.svg'; 
 import seloff from '/icons-1/Selected=Off.svg'; 
 import selon from '/icons-1/Selected=On.svg'; 
-
+import styles from './ProjectPopup.module.css';
 
 export function PropCard({ project }) {
   const {
@@ -49,14 +49,14 @@ export function PropCard({ project }) {
 
 
   return (
-    <Card className="w-full max-w-[24rem] shadow-lg ml-4 mr-4">
-      <CardHeader floated={false} color="blue-gray" className="relative h-56 mx-0 rounded-t-lg rounded-b-none">
+    <Card className="w-full max-w-[24rem] ml-0 mr-0 shadow-none border" style={{ borderColor: "var(--Neutrals-Neutrals200, #CCCBCB)" }}>
+      <CardHeader floated={false} color="blue-gray" className="relative h-56 mx-0 rounded-t-lg rounded-b-none shadow-none mt-0">
         <img
           src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           alt={projectName}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60" />
+        <div className="absolute inset-0 h-full w-full" />
         <div className="absolute top-4 left-4 flex space-x-2">
           <img src={truSelected}/>
           <img src={rerasel}/>
@@ -70,12 +70,12 @@ export function PropCard({ project }) {
         <img src={A.p2 ? selon : seloff} onClick={() => handleClick('p2')} alt="Star" />
         </div>
       </CardHeader>
-      <CardBody className="pt-2">
+      <CardBody className="pt-4">
         <div className="mb-3">
-          <Typography variant="h5" color="blue-gray" className="font-medium">
+          <Typography variant="h5" className={`font-large ${styles['proj-name']}`}>
             {projectName}
           </Typography>
-          <Typography color="gray" className="font-normal">
+          <Typography color="gray" className="font-medium">
             HSR Layout
           </Typography>
         </div>

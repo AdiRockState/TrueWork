@@ -1,3 +1,4 @@
+// MainContent.js
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import SidebarWithLogo from './Sidebar/sidebar';
@@ -8,7 +9,8 @@ import { Bars3Icon } from '@heroicons/react/24/solid';
 import { Typography } from '@material-tailwind/react';
 import HelpModal from './Help/HelpModal';
 import WishList from './WishList/WishList';
-import Requirement from './Requirements/Requirement';
+import BlogPage from './Blog/BlogPage'; 
+import Requirement from './Requirement/Requirement';
 
 function MainContent({ view, projects, handleSearch, handleFilterChange, filters, setMinInvestment, toggleView, loadMoreProjects, totalProjects }) {
   const location = useLocation();
@@ -70,6 +72,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
               </div>
             } />
             <Route path="/wishlist" element={<WishList />} />
+            <Route path="/insights" element={<BlogPage />} /> {/* Add this line */}
             <Route path="/requirement" element={<Requirement />} />
           </Routes>
         </div>
