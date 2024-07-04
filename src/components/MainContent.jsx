@@ -10,9 +10,12 @@ import { Typography } from '@material-tailwind/react';
 import HelpModal from './Help/HelpModal';
 import WishList from './WishList/WishList';
 import BlogPage from './Blog/BlogPage'; 
+import BlogContent from './Blog/BlogContent'; 
 import Requirement from './Requirements/Requirement';
+import AgentModal from './AgentModal/AgentModal';
+import Profile from './Profile/Profile';
 import ScheduleMeeting from './ScheduleMeeting/ScheduleMeeting';
-import BlogContent from './Blog/BlogContent'
+
 function MainContent({ view, projects, handleSearch, handleFilterChange, filters, setMinInvestment, toggleView, loadMoreProjects, totalProjects }) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -76,6 +79,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
             <Route path="/insights" element={<BlogPage />} /> {/* Add this line */}
             <Route path="/requirement" element={<Requirement />} />
             <Route path="/schedule" element={<ScheduleMeeting />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/blogcontent" element={<BlogContent />} />
           </Routes>
         </div>
