@@ -10,7 +10,7 @@ import { Typography } from '@material-tailwind/react';
 import HelpModal from './Help/HelpModal';
 import WishList from './WishList/WishList';
 import BlogPage from './Blog/BlogPage'; 
-import Requirement from './Requirement/Requirement';
+import Requirement from './Requirements/Requirement';
 
 function MainContent({ view, projects, handleSearch, handleFilterChange, filters, setMinInvestment, toggleView, loadMoreProjects, totalProjects }) {
   const location = useLocation();
