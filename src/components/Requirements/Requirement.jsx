@@ -63,7 +63,7 @@ const Requirement = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className={`${styles.bkg} flex flex-col h-screen`}>
       <div className={`${styles.tabs} px-4`}>
         {requirements.map(req => (
           <button

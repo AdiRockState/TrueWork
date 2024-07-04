@@ -87,8 +87,8 @@ const RequirementForm = ({ isActive, requirement, updateRequirement }) => {
   ];
 
   return (
-    <div className={`bg-white p-6 shadow-md rounded ${styles.form}`}>
-      <form className="grid gap-6 md:grid-cols-2">
+    <div className={`bg-white p-6 shadow-md rounded ${styles.form} ${styles.bkg}`}>
+      <form className={`${styles.bkg} grid gap-6 md:grid-cols-2`}>
         <div>
           <div className="mb-4">
             <label className="block text-gray-700">Budget:</label>
@@ -104,18 +104,7 @@ const RequirementForm = ({ isActive, requirement, updateRequirement }) => {
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">Tenure (Years):</label>
-            <select 
-              name="tenure"
-              value={requirement.tenure}
-              onChange={e => updateRequirement(requirement.id, e.target.name, e.target.value)}
-              className={`mt-1 block w-full border-gray-300 rounded-md shadow-sm ${styles.select}`}
-            >
-              {tenureOptions.map(option => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+            <input type='number' className="focus:outline-none border-2"></input>
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">Investment Goal:</label>
@@ -123,6 +112,7 @@ const RequirementForm = ({ isActive, requirement, updateRequirement }) => {
               {renderToggleButtons('investmentGoal', investmentGoalOptions, true)}
             </div>
           </div>
+          
           <div className="mb-10">
             <label className="block text-gray-700">Builder Category:</label>
             <div className="flex flex-wrap">
@@ -169,12 +159,12 @@ const RequirementForm = ({ isActive, requirement, updateRequirement }) => {
           </div>
           <div className="mb-10">
             <label className="block text-gray-700">Any other thing you want to tell us:</label>
-            <textarea 
+            <textarea
               name="additionalInfo" 
               value={requirement.additionalInfo} 
               onChange={e => updateRequirement(requirement.id, e.target.name, e.target.value)} 
               maxLength="255"
-              className={`mt-1 block w-full border-gray-300 rounded-md shadow-sm ${styles.textarea}`}
+              className={`mt-1 block w-full border-gray-300 rounded-md shadow-sm ${styles.textarea} focus:outline-none border-2`}
             ></textarea>
           </div>
         </div>

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+.bkg{
+  background: var(--Neutrals-Base-White, #FAFAFA) !important;
+}
 .tabs {
     display: flex;
     gap: 1rem;
@@ -70,7 +72,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
-    padding: 0.625rem 1rem;
+    padding: 0.5rem 0.875rem;
     display: flex;
     align-items: center;
     margin: 0.25rem;
