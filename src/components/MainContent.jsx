@@ -10,6 +10,7 @@ import { Typography } from '@material-tailwind/react';
 import HelpModal from './Help/HelpModal';
 import WishList from './WishList/WishList';
 import BlogPage from './Blog/BlogPage'; 
+import Requirement from './Requirement/Requirement';
 
 function MainContent({ view, projects, handleSearch, handleFilterChange, filters, setMinInvestment, toggleView, loadMoreProjects, totalProjects }) {
   const location = useLocation();
@@ -72,6 +73,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
             } />
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/insights" element={<BlogPage />} /> {/* Add this line */}
+            <Route path="/requirement" element={<Requirement />} />
           </Routes>
         </div>
       </div>
