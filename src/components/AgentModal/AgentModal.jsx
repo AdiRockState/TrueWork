@@ -39,7 +39,7 @@ const AgentModal = ({ agent, meetings, isOpen, onClose }) => {
           </div>
         </div>
         <div className="flex justify-between items-center mb-8">
-          <button className={`border w-1/2 py-2 px-4 rounded-md ${styles.actionButton1}`}>Schedule Meeting</button>
+          <button className={`border w-1/2 py-2 px-4 mr-2 rounded-md ${styles.actionButton1}`}>Schedule Meeting</button>
           <button className={`border w-1/2 py-2 px-4 rounded-md flex items-center justify-center ${styles.actionButton2}`}>
             <img src={WhatIcon2} className={`text-xl mr-2 ${styles.icon}`} alt="WhatsApp" />WhatsApp
           </button>
