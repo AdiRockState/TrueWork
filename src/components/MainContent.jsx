@@ -118,6 +118,18 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
     setModalOpen(!modalOpen);
   };
 
+  const agents = [
+    { image: "https://via.placeholder.com/150",name: 'John Doe', designation: 'Investment Manager', email: 'john.doe@example.com', phone: '123-456-7890', upcomingMeetings: 5 },
+  ];
+
+  let meetings = [
+    { date: '2024-07-05', time: '10:00 AM', action: 'Discuss project timeline' },
+    { date: '2024-07-06', time: '2:30 PM', action: 'Review prototype' },
+    { date: '2024-07-08', time: '11:15 AM', action: 'Planning session' },
+    { date: '2024-07-05', time: '10:00 AM', action: 'Discuss project timeline' },
+    { date: '2024-07-06', time: '2:30 PM', action: 'Review prototype' },
+  ];
+
   return (
     <div className="flex h-screen">
       <div className={`fixed w-64 h-full bg-white-800 transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 z-20`}>
@@ -171,6 +183,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
             <Route path="/profile" element={<Profile />} />
             <Route path="/blogcontent" element={<BlogContent />} />
             <Route path="/details" element={<ProjectDetails data={data} />} />
+            <Route path="/agm" element={<AgentModal agent={agents[0]} meetings={meetings} isOpen={true} onClose={()=>{}}/>} />
           </Routes>
         </div>
       </div>
