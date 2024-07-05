@@ -7,19 +7,19 @@ const options = {
     h1: {
       component: 'h1',
       props: {
-        className: 'text-4xl font-bold mb-4'
+        className: 'text-4xl font-bold mb-4 mt-4'
       }
     },
     h2: {
       component: 'h2',
       props: {
-        className: 'text-3xl font-bold mb-3'
+        className: 'text-3xl font-bold mb-3 mt-4'
       }
     },
     h3: {
       component: 'h3',
       props: {
-        className: 'text-2xl font-bold mb-2'
+        className: 'text-2xl font-bold mb-2 mt-4'
       }
     }
   }
