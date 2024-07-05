@@ -11,7 +11,7 @@ import SimilarProperties from './SimilarProperties';
 import InvestmentCalculator from './InvestmentCalculator';
 
 const data = {
-  images: ['/path/to/image1.jpg', '/path/to/image2.jpg', '/path/to/image3.jpg'],
+  images: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150', 'https://via.placeholder.com/150'],
   projectOverview: [
     { label: 'Location', value: 'Hsr Layout' },
     { label: 'Configuration', value: '1,2,3 BHK' },
