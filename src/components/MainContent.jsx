@@ -23,7 +23,7 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
   const [modalOpen, setModalOpen] = React.useState(false);
 
   const data = {
-    images: ['/path/to/image1.jpg', '/path/to/image2.jpg', '/path/to/image3.jpg'],
+    images: ["https://via.placeholder.com/150","https://via.placeholder.com/150", "https://via.placeholder.com/150"],
     projectOverview: [
       { label: 'Location', value: 'Hsr Layout' },
       { label: 'Configuration', value: '1,2,3 BHK' },
@@ -72,8 +72,8 @@ function MainContent({ view, projects, handleSearch, handleFilterChange, filters
       thingsToConsider: ['Point A', 'Point B', 'Point C'],
     },
     legalDueDiligence: [
-      { icon: '/path/to/icon.png', label: 'RERA' },
-      { icon: '/path/to/icon.png', label: 'Title Clearance' },
+      { icon: "https://via.placeholder.com/150", label: 'RERA' },
+      { icon: "https://via.placeholder.com/150", label: 'Title Clearance' },
       // More items...
     ],
     locationAnalysis: {
