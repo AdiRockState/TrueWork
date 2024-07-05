@@ -1,6 +1,6 @@
-// MainContent.js
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import axios from 'axios';
 import SidebarWithLogo from './Sidebar/sidebar';
 import { SearchBar } from './SearchBar';
 import ProjectGrid from './ProjectGrid';
@@ -9,18 +9,100 @@ import { Bars3Icon } from '@heroicons/react/24/solid';
 import { Typography } from '@material-tailwind/react';
 import HelpModal from './Help/HelpModal';
 import WishList from './WishList/WishList';
-import BlogPage from './Blog/BlogPage'; 
-import BlogContent from './Blog/BlogContent'; 
+import BlogPage from './Blog/BlogPage';
+import BlogContent from './Blog/BlogContent';
 import Requirement from './Requirements/Requirement';
 import AgentModal from './AgentModal/AgentModal';
 import Profile from './Profile/Profile';
 import ScheduleMeeting from './ScheduleMeeting/ScheduleMeeting';
 import ProjectDetails from './ProjectDetails/ProjectDetails';
 
-function MainContent({ view, projects, handleSearch, handleFilterChange, filters, setMinInvestment, toggleView, loadMoreProjects, totalProjects }) {
+function MainContent() {
+  const [projects, setProjects] = useState([]);
+  const [view, setView] = useState('map');
+  const [filters, setFilters] = useState({
+    searchTerm: '',
+    investmentType: '',
+    strategy: '',
+    minInvestment: 0,
+    tenure: ''
+  });
+  const [offset, setOffset] = useState(0);
+  const [totalProjects, setTotalProjects] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const limit = 12;
+
+  const fetchProjects = useCallback(async (newFilters, newOffset = 0, newView = view) => {
+    if (loading) return;
+
+    const appliedLimit = newView === 'grid' ? limit : undefined;
+    console.log(`Fetching projects with limit: ${appliedLimit}, offset: ${newOffset}, view: ${newView}`);
+
+    setLoading(true);
+    try {
+      const response = await axios.post('http://localhost:3000/api/projects', {
+        ...newFilters,
+        offset: newOffset,
+        limit: appliedLimit
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const { projects, totalProjects } = response.data;
+
+      if (newOffset === 0 || newView !== view) {
+        console.log("Setting new projects");
+        setProjects(projects);
+      } else {
+        console.log("Appending projects");
+        setProjects(prevProjects => [...prevProjects, ...projects]);
+      }
+      setTotalProjects(totalProjects);
+    } catch (error) {
+      console.error('Error fetching projects:', error);
+    } finally {
+      setLoading(false);
+    }
+  }, [loading, limit, view]);
+
+  useEffect(() => {
+    fetchProjects(filters, 0, view);
+  }, [filters, view]);
+
+  const handleSearch = (term) => {
+    setFilters(prevFilters => ({ ...prevFilters, searchTerm: term }));
+    setOffset(0);
+  };
+
+  const handleFilterChange = (name, value) => {
+    setFilters(prevFilters => ({ ...prevFilters, [name]: value }));
+    setOffset(0);
+  };
+
+  const setMinInvestment = (value) => {
+    setFilters(prevFilters => ({ ...prevFilters, minInvestment: value }));
+    setOffset(0);
+  };
+
+  const toggleView = () => {
+    const newView = view === 'grid' ? 'map' : 'grid';
+    setView(newView);
+    setOffset(0);
+  };
+
+  const loadMoreProjects = () => {
+    if (view === 'grid' && projects.length < totalProjects && !loading) {
+      const newOffset = offset + limit;
+      fetchProjects(filters, newOffset, view);
+      setOffset(newOffset);
+    }
+  };
+
   const location = useLocation();
-  const [sidebarOpen, setSidebarOpen] = React.useState(false);
-  const [modalOpen, setModalOpen] = React.useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const data = {
     images: ["https://via.placeholder.com/150","https://via.placeholder.com/150", "https://via.placeholder.com/150"],
