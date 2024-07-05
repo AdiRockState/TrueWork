@@ -59,11 +59,11 @@ function BlogContent() {
   };
 
   return (
-    <div className="flex">
-      <div className="w-4/5 p-4">
+    <div className="flex overflow-hidden">
+      <div className="w-4/5 p-4 overflow-y-auto h-screen hide-scrollbar">
         <MarkDown options={options}>{post}</MarkDown>
       </div>
-      <div className="w-1/5 p-4">
+      <div className="w-1/5 p-4 sticky top-0">
         <TableOfContents headings={headings} />
       </div>
     </div>
