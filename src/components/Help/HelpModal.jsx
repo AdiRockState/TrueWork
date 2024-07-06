@@ -1,12 +1,12 @@
 import React from 'react';
 import TutorialCard from './TutorialCard';
 
-const HelpModal = ({ closeModal }) => {
+const HelpModal = ({ closeHelpModal }) => {
   return (
     <div className="fixed inset-y-0 top-28 left-52 flex items-center justify-center z-30 h-3/4">
       <div className="bg-white rounded-lg shadow-lg p-4 w-3/4 relative pb-0">
         <button
-          onClick={closeModal}
+          onClick={closeHelpModal}
           className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
         >
           &times;

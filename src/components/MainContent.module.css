@@ -1,0 +1,13 @@
+.actionButton2 {
+    border-color: var(--Primary-Dark-Green-P, #153E3B);
+    color: var(--Neutrals-Grey-50, #FAFBFC);
+    background: var(--Primary-Dark-Green-P, #153E3B);
+    font-family: Lato;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 150%; /* 21px */
+  }
+
+  .icon {
+    font-size: 1.5rem;
+}

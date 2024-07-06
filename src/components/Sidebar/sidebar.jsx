@@ -21,11 +21,15 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from './sidebar.module.css';
 
-export default function SidebarWithLogo({ sidebarOpen, toggleSidebar, toggleModal }) {
+export default function SidebarWithLogo({ sidebarOpen, toggleSidebar, toggleHelpModal, toggleAgentModal }) {
   const navigate = useNavigate();
 
   const handleWishlistClick = () => {
     navigate('/wishlist');
+  };
+
+  const handleHomeClick = ()=> {
+    navigate('/');
   };
 
   const handleInsightsClick = () => {
@@ -43,7 +47,8 @@ export default function SidebarWithLogo({ sidebarOpen, toggleSidebar, toggleModa
       <Card className={`h-full p-4 shadow-xl shadow-blue-gray-900/5 ${styles.sidebar} ${sidebarOpen ? 'block' : 'hidden'} md:block`}>
         <div className="mb-2 flex items-center gap-4 p-4">
           <img src="https://docs.material-tailwind.com/img/logo-ct-dark.png" alt="brand" className="h-8 w-8" />
-          <Typography variant="h5" color="blue-gray">
+          <Typography variant="h5" color="blue-gray" onClick={handleHomeClick}
+            style={{ cursor: 'pointer' }}>
             TruEstate
           </Typography>
         </div>
@@ -68,7 +73,7 @@ export default function SidebarWithLogo({ sidebarOpen, toggleSidebar, toggleModa
               </ListItemPrefix>
               Wishlist
             </ListItem>
-            <ListItem onClick={toggleModal}>
+            <ListItem onClick={toggleHelpModal}>
               <ListItemPrefix>
                 <Cog6ToothIcon className="h-5 w-5" />
               </ListItemPrefix>
@@ -84,9 +89,16 @@ export default function SidebarWithLogo({ sidebarOpen, toggleSidebar, toggleModa
           <List className="absolute bottom-0">
             <ListItem className="border">
               <ListItemPrefix>
-                <PowerIcon className="h-5 w-5" />
+              <img 
+                src= 'https://via.placeholder.com/150'
+                alt="User" 
+                className="w-8 h-8 rounded-full" 
+              />
               </ListItemPrefix>
-              Log Out
+              <div className="flex flex-col" onClick={toggleAgentModal}>
+              <p className="text-s">Your Rel. Manager</p>
+              <p>Name</p>
+              </div>
             </ListItem>
           </List>
         </div>

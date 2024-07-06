@@ -107,3 +107,7 @@
 .mh::-webkit-scrollbar {
     display: none;
 }
+
+.modalContent {
+    left: 18rem;
+}
