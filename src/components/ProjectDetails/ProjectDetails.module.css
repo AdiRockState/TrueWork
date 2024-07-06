@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 .heading{
     color: var(--Neutrals-Base-Black, var(--Neutrals-Base-Black, #0A0B0A));
     /* Heading / Bold / Small */
@@ -7,4 +9,45 @@
     font-weight: 700;
     line-height: 150%; /* 27px */
     margin-bottom: 1.25rem;
+}
+
+.bigheading{
+    color: var(--Neutrals-Base-Black, var(--Neutrals-Base-Black, #0A0B0A));
+    /* Heading/Bold/Medium */
+    font-family: Montserrat;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
+}
+
+.the{
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+    letter-spacing: 0.015625rem;
+}
+
+.upd{
+    color: var(--Neutrals-Grey-700, var(--Neutrals-Neutrals700, #5A5555));
+
+    /* Label/Medium */
+    font-family: Lato;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
+
+.updt{
+    color: var(--Neutrals-Grey-1000, var(--Neutrals-Neutrals1000, #151413));
+
+    /* Label/Medium */
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
 }

@@ -9,31 +9,26 @@ import LocationAnalysis from './LocationAnalysis';
 import Documents from './Documents';
 import SimilarProperties from './SimilarProperties';
 import InvestmentCalculator from './InvestmentCalculator';
-
-const gdata = [
-  { name: 'Down Payment', value: 2.25, color: '#04444E' },
-  { name: 'Interest', value: 0.75, color: '#FF5733' },
-  { name: 'Principal', value: 1.50, color: '#FFBD33' },
-  { name: 'Stamp Duty', value: 0.50, color: '#33FFF6' },
-  { name: 'Extra Charges', value: 1.00, color: '#FF33A1' },
-  { name: 'Reg. Charges', value: 0.5, color: '#F6FF33' }
-];
-const total = gdata.reduce((sum, item) => sum + item.value, 0);
+import styles from './ProjectDetails.module.css';
+import True from '/icons-1/truselected.svg';
+import Rera from '/icons-1/Rera.svg';
 
 const ProjectDetails = ({ data }) => (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
     <div className="md:col-span-2">
       <div className='h-full w-full md:w-3/4"'>
+      <div className='flex gap-2.5'><div className={`${styles.bigheading}`}>Mahindra Zen</div><img src={True}></img><img src={Rera}></img></div>
+      <div className="flex mb-6"><div className={`${styles.upd} mr-2`}>Updated on</div><div className={styles.updt}>1 Jun 2024</div></div>
       <ImageCarousel images={data.images} />
       <Overview title="Project Overview" details={data.projectOverview} />
-      <InvestmentBreakdownChart data={gdata} total={total} />
+      <InvestmentBreakdownChart data={data.gdata} total={data.gdata.reduce((sum, item) => sum + item.value, 0)} />
       <CashFlowsTable data={data.cashFlowsTable} />
       <PointsList title="Why True State Selected" points={data.pointsList.trueStateSelected} />
       <PointsList title="Things You Should Also Consider" points={data.pointsList.thingsToConsider} />
-      <LegalDueDiligence title="Legal Due Diligence" items={data.legalDueDiligence} />
+      <LegalDueDiligence title="Legal Due Diligence"/>
       <LocationAnalysis filters={data.locationAnalysis.filters} defaultMarker={data.locationAnalysis.defaultMarker} markers={data.locationAnalysis.markers} />
       <Documents documents={data.documents} />
-      <SimilarProperties properties={data.similarProperties} />
+      <SimilarProperties similarProperties={data.similarProperties} />
       </div>
     </div>
     <div className="md:col-span-1">

@@ -155,11 +155,6 @@ function MainContent() {
       trueStateSelected: ['Point 1', 'Point 2', 'Point 3'],
       thingsToConsider: ['Point A', 'Point B', 'Point C'],
     },
-    legalDueDiligence: [
-      { icon: "https://via.placeholder.com/150", label: 'RERA' },
-      { icon: "https://via.placeholder.com/150", label: 'Title Clearance' },
-      // More items...
-    ],
     locationAnalysis: {
       filters: {
         Education: ['School', 'College'],
@@ -173,9 +168,42 @@ function MainContent() {
       },
     },
     documents: ['Master Plan', 'Brochure'],
-    similarProperties: [
-      { name: 'Property 1', location: 'Location 1', price: '1 Cr', area: '1000 sqft' },
-      // More properties...
+    similarProperties:  [
+      {
+        name: 'Mahindra Zen',
+        location: 'Hsr layout',
+        config: '2 BHK',
+        unitPrice: '₹4.25 Crs',
+        stage: 'New Launch',
+        investmentAmount: '₹65.25 Lac',
+        targetPrice: '₹1.25 Cr'
+      },
+      {
+        name: 'Mahindra Zen',
+        location: 'Hsr layout',
+        config: '2 BHK',
+        unitPrice: '₹4.25 Crs',
+        stage: 'New Launch',
+        investmentAmount: '₹65.25 Lac',
+        targetPrice: '₹1.25 Cr'
+      },
+      {
+        name: 'Mahindra Zen',
+        location: 'Hsr layout',
+        config: '2 BHK',
+        unitPrice: '₹4.25 Crs',
+        stage: 'New Launch',
+        investmentAmount: '₹65.25 Lac',
+        targetPrice: '₹1.25 Cr'
+      }
+    ],
+    gdata: [
+      { name: 'Down Payment', value: 2.25, color: '#04444E' },
+      { name: 'Interest', value: 0.75, color: '#FF5733' },
+      { name: 'Principal', value: 1.50, color: '#FFBD33' },
+      { name: 'Stamp Duty', value: 0.50, color: '#33FFF6' },
+      { name: 'Extra Charges', value: 1.00, color: '#FF33A1' },
+      { name: 'Reg. Charges', value: 0.5, color: '#F6FF33' }
     ],
     investmentCalculator: {
       configurations: [
