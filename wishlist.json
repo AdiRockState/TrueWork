@@ -1,0 +1,383 @@
+[
+  {
+    "Internal ID": 3,
+    "Project Name": "Kolte Patil Lakeside 24",
+    "RERA ID": "PRM/KA/RERA/1251/446/PR/060324/006667",
+    "Developer": "Kolte Patil Developers Ltd",
+    "Type": "Apartment",
+    "Latitude": 13.0770555,
+    "Longitude": 77.660955,
+    "nearest_metros": [
+      {
+        "name": "K.R. Pura",
+        "distance": 15.92,
+        "coordinates": {
+          "latitude": 12.999922,
+          "longitude": 77.677607
+        }
+      },
+      {
+        "name": "Benniganahalli",
+        "distance": 15.323,
+        "coordinates": {
+          "latitude": 12.996476,
+          "longitude": 77.668454
+        }
+      },
+      {
+        "name": "Benniganahalli Metro Station",
+        "distance": 15.345,
+        "coordinates": {
+          "latitude": 12.9963737,
+          "longitude": 77.6682628
+        }
+      },
+      {
+        "name": "Singayyanapalya",
+        "distance": 16.178,
+        "coordinates": {
+          "latitude": 12.996557,
+          "longitude": 77.692708
+        }
+      },
+      {
+        "name": "Baiyappanahalli",
+        "distance": 15.608,
+        "coordinates": {
+          "latitude": 12.9906677,
+          "longitude": 77.6525905
+        }
+      }
+    ],
+    "nearest_hospitals": [
+      {
+        "name": "Manipal Hospital Hebbal",
+        "distance": 11.776,
+        "coordinates": {
+          "latitude": 13.0509374,
+          "longitude": 77.5939248
+        }
+      },
+      {
+        "name": "Vinay Nursing Home",
+        "distance": 9.856,
+        "coordinates": {
+          "latitude": 13.0088324,
+          "longitude": 77.6222942
+        }
+      },
+      {
+        "name": "Bangalore Baptist Hospital",
+        "distance": 12.614,
+        "coordinates": {
+          "latitude": 13.0356137,
+          "longitude": 77.5896209
+        }
+      },
+      {
+        "name": "Popular furniture",
+        "distance": 11.889,
+        "coordinates": {
+          "latitude": 13.0146784,
+          "longitude": 77.608957
+        }
+      },
+      {
+        "name": "Reach Psychiatry",
+        "distance": 8.824,
+        "coordinates": {
+          "latitude": 13.020844,
+          "longitude": 77.643007
+        }
+      },
+      {
+        "name": "Sri Sai Poly Clinic",
+        "distance": 3.863,
+        "coordinates": {
+          "latitude": 13.0668844,
+          "longitude": 77.6392785
+        }
+      },
+      {
+        "name": "Medi Derma Hospital",
+        "distance": 2.96,
+        "coordinates": {
+          "latitude": 13.0599302,
+          "longitude": 77.6525705
+        }
+      },
+      {
+        "name": "Dementia Care Home",
+        "distance": 10.505,
+        "coordinates": {
+          "latitude": 13.0237712,
+          "longitude": 77.6583637
+        }
+      },
+      {
+        "name": "Carmel Medical & Dental Care",
+        "distance": 4.43,
+        "coordinates": {
+          "latitude": 13.049746,
+          "longitude": 77.645341
+        }
+      },
+      {
+        "name": "Pristine Natural Health & Research Centre India Pvt. Ltd.",
+        "distance": 8.021,
+        "coordinates": {
+          "latitude": 13.0244952,
+          "longitude": 77.6375646
+        }
+      },
+      {
+        "name": "Srivijaya Hospital ಶ್ರೀ ವಿಜಯ ಆಸ್ಪತ್ರೆ",
+        "distance": 11.815,
+        "coordinates": {
+          "latitude": 13.0124758,
+          "longitude": 77.6579748
+        }
+      },
+      {
+        "name": "ReachH Homeopathic Pharma",
+        "distance": 2.86,
+        "coordinates": {
+          "latitude": 13.0623759,
+          "longitude": 77.6494063
+        }
+      },
+      {
+        "name": "REGAL Kidney and Multi Specialty Hospital, Bengaluru",
+        "distance": 3.539,
+        "coordinates": {
+          "latitude": 13.0833285,
+          "longitude": 77.6349608
+        }
+      },
+      {
+        "name": "Cratis Hospital",
+        "distance": 4.464,
+        "coordinates": {
+          "latitude": 13.0483181,
+          "longitude": 77.6456396
+        }
+      },
+      {
+        "name": "AJ medicals And General Store",
+        "distance": 6.654,
+        "coordinates": {
+          "latitude": 13.0512104,
+          "longitude": 77.6339906
+        }
+      },
+      {
+        "name": "Sakaria Hospital",
+        "distance": 7.921,
+        "coordinates": {
+          "latitude": 13.029592,
+          "longitude": 77.6275723
+        }
+      },
+      {
+        "name": "SRI SAI CLINIC",
+        "distance": 7.275,
+        "coordinates": {
+          "latitude": 13.0372345,
+          "longitude": 77.6751547
+        }
+      },
+      {
+        "name": "URBAN Kids Clinic",
+        "distance": 8.394,
+        "coordinates": {
+          "latitude": 13.0308152,
+          "longitude": 77.668606
+        }
+      },
+      {
+        "name": "Dr. Sailaja's Super Speciality Eye Hospital",
+        "distance": 9.08,
+        "coordinates": {
+          "latitude": 13.0276547,
+          "longitude": 77.6613527
+        }
+      },
+      {
+        "name": "Sri Hari Medical and General Store",
+        "distance": 8.511,
+        "coordinates": {
+          "latitude": 13.0298902,
+          "longitude": 77.6792399
+        }
+      }
+    ],
+    "nearest_schools": [
+      {
+        "name": "NANDU HOSPITALITY - AASHIYANA",
+        "distance": 10.904,
+        "coordinates": {
+          "latitude": 13.0491893,
+          "longitude": 77.6046668
+        }
+      },
+      {
+        "name": "Vidya Niketan School",
+        "distance": 12.536,
+        "coordinates": {
+          "latitude": 13.0475813,
+          "longitude": 77.5967682
+        }
+      },
+      {
+        "name": "Kensri School",
+        "distance": 10.34,
+        "coordinates": {
+          "latitude": 13.049655,
+          "longitude": 77.6148462
+        }
+      },
+      {
+        "name": "Legacy School",
+        "distance": 2.559,
+        "coordinates": {
+          "latitude": 13.0633262,
+          "longitude": 77.6520639
+        }
+      },
+      {
+        "name": "Sri Chaitanya Techno School",
+        "distance": 12.382,
+        "coordinates": {
+          "latitude": 13.0195456,
+          "longitude": 77.6732862
+        }
+      },
+      {
+        "name": "Canadian International School",
+        "distance": 11.875,
+        "coordinates": {
+          "latitude": 13.1189911,
+          "longitude": 77.5951035
+        }
+      },
+      {
+        "name": "Trio World Academy",
+        "distance": 12.167,
+        "coordinates": {
+          "latitude": 13.0587345,
+          "longitude": 77.5833838
+        }
+      },
+      {
+        "name": "Academy of Excellence",
+        "distance": 9.413,
+        "coordinates": {
+          "latitude": 13.0195362,
+          "longitude": 77.6459177
+        }
+      },
+      {
+        "name": "Mars Adventures",
+        "distance": 8.194,
+        "coordinates": {
+          "latitude": 13.0318054,
+          "longitude": 77.6807102
+        }
+      },
+      {
+        "name": "Bubbles Centre for Autism",
+        "distance": 4.42,
+        "coordinates": {
+          "latitude": 13.050986,
+          "longitude": 77.6708052
+        }
+      },
+      {
+        "name": "The OrangeKids Preschool",
+        "distance": 3.225,
+        "coordinates": {
+          "latitude": 13.0582437,
+          "longitude": 77.6529155
+        }
+      },
+      {
+        "name": "Oxford School and Composite PU College",
+        "distance": 6.355,
+        "coordinates": {
+          "latitude": 13.1040317,
+          "longitude": 77.6235389
+        }
+      },
+      {
+        "name": "Manasa Light Age Foundation",
+        "distance": 1.006,
+        "coordinates": {
+          "latitude": 13.0798468,
+          "longitude": 77.6665371
+        }
+      },
+      {
+        "name": "Swami Vivekananda Yoga Centre",
+        "distance": 8.753,
+        "coordinates": {
+          "latitude": 13.0229947,
+          "longitude": 77.6420613
+        }
+      },
+      {
+        "name": "YuvaLok Riha Community School",
+        "distance": 6.552,
+        "coordinates": {
+          "latitude": 13.035628,
+          "longitude": 77.645669
+        }
+      },
+      {
+        "name": "Apple Kids",
+        "distance": 10.842,
+        "coordinates": {
+          "latitude": 13.0247301,
+          "longitude": 77.6555333
+        }
+      },
+      {
+        "name": "Haadee Fitness Floor",
+        "distance": 9.1,
+        "coordinates": {
+          "latitude": 13.0208263,
+          "longitude": 77.6475421
+        }
+      },
+      {
+        "name": "Jaigopal Garodia Rashtrotthana Vidyalaya",
+        "distance": 9.629,
+        "coordinates": {
+          "latitude": 13.0178945,
+          "longitude": 77.6491106
+        }
+      },
+      {
+        "name": "Bangalore International School",
+        "distance": 4.674,
+        "coordinates": {
+          "latitude": 13.0474777,
+          "longitude": 77.6467162
+        }
+      },
+      {
+        "name": "CITADELKIDS - Horamavu",
+        "distance": 10.311,
+        "coordinates": {
+          "latitude": 13.0219625,
+          "longitude": 77.6558825
+        }
+      }
+    ],
+    "Cost": "25000000",
+    "Tenure": 1,
+    "IRR": 31.84,
+    "Investment Type": "Full",
+    "Strategy": "Buy to Rent",
+    "Average Price": 13361.78
+  }
+]

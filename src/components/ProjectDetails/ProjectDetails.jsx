@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import ImageCarousel from './ImageCarousel';
 import Overview from './Overview';
 import InvestmentBreakdownChart from './GanttChart';
@@ -13,11 +14,14 @@ import styles from './ProjectDetails.module.css';
 import True from '/icons-1/truselected.svg';
 import Rera from '/icons-1/Rera.svg';
 
-const ProjectDetails = ({ data }) => (
+const ProjectDetails = ({data}) => {
+  const location = useLocation();
+  const { project } = location.state || {};
+  return (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
     <div className="md:col-span-2">
       <div className='h-full w-full md:w-3/4"'>
-      <div className='flex gap-2.5'><div className={`${styles.bigheading}`}>Mahindra Zen</div><img src={True}></img><img src={Rera}></img></div>
+      <div className='flex gap-2.5'><div className={`${styles.bigheading}`}>{project['Project Name']}</div><img src={True}></img><img src={Rera}></img></div>
       <div className="flex mb-6"><div className={`${styles.upd} mr-2`}>Updated on</div><div className={styles.updt}>1 Jun 2024</div></div>
       <ImageCarousel images={data.images} />
       <Overview title="Project Overview" details={data.projectOverview} />
@@ -41,6 +45,7 @@ const ProjectDetails = ({ data }) => (
       </div>
     </div>
   </div>
-);
+)
+};
 
 export default ProjectDetails;

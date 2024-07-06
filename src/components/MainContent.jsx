@@ -231,13 +231,7 @@ function MainContent() {
     },
   };
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
-  const toggleModal = () => {
-    setModalOpen(!modalOpen);
-  };
+  
 
   const agents = [
     { name: 'Agent 1', phone: '1234567890', image: 'https://via.placeholder.com/150', designation: 'Investment Manager', email: 'abc@gmail.com' },

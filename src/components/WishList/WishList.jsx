@@ -1,40 +1,40 @@
-import React, { useState } from 'react';
-import WishListTable from './WishListTable';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // If using axios
+import WishListTable from './WishListTable'; // Update with your actual component path
 
 const WishList = () => {
-  const [projects, setProjects] = useState([{
-    projectName: 'Project A',
-    location: 'New York',
-    minInvest: '$1000',
-    strategy: 'Growth',
-    invType: 'Equity',
-    tenure: '2 years',
-    irr: '15%',
-    addedBy: 'John Doe',
-    status: 'Not Discussed'
-  },
-  {
-    projectName: 'Project B',
-    location: 'New York',
-    minInvest: '$1000',
-    strategy: 'Growth',
-    invType: 'Equity',
-    tenure: '2 years',
-    irr: '15%',
-    addedBy: 'John Doe',
-    status: 'EOI Collection'
-  },
-  {
-    projectName: 'Project C',
-    location: 'Los Angeles',
-    minInvest: '$5000',
-    strategy: 'Value',
-    invType: 'Debt',
-    tenure: '3 years',
-    irr: '10%',
-    addedBy: 'Jane Smith',
-    status: 'Not Interested'
-  }]);
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        // Load JSON file using fetch or axios
+        // Using fetch
+        const response = await fetch('/wishlist.json'); // Adjust the path as per your file location
+        if (!response.ok) {
+          throw new Error('Failed to fetch wishlist data');
+        }
+        const data = await response.json();
+        setProjects(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="container mx-auto px-4">
