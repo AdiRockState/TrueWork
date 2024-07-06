@@ -114,7 +114,7 @@ function MainContent() {
   const [ScheduleMeetingOpen, setScheduleMeetingOpen] = useState(false);
 
   const data = {
-    images: ['/path/to/image1.jpg', '/path/to/image2.jpg', '/path/to/image3.jpg'],
+    images: ["https://via.placeholder.com/150","https://via.placeholder.com/150", "https://via.placeholder.com/150"],
     projectOverview: [
       { label: 'Location', value: 'Hsr Layout' },
       { label: 'Configuration', value: '1,2,3 BHK' },
@@ -133,32 +133,110 @@ function MainContent() {
       { label: 'Builder category', value: 'Cat B' },
     ],
     investmentOverview: [
-      { label: 'Total Investment', value: '1.25 Cr' },
-      { label: 'Sold', value: '60%' },
-      { label: 'Tenure', value: '2 years' },
-      { label: 'Initial Investment', value: '1.25 Cr' },
-      { label: 'Land Appreciation %', value: '20% year on year' },
-      { label: 'Asset Management %', value: '0.5%' },
-      { label: 'Rental Yield', value: '8%' },
+      { label: 'Preferred Config.', value: '2 BHK' },
+  { label: 'Investment Amount', value: '₹65.25 Lac' },
+  { label: 'Target Price', value: '₹3.25 Crs' },
+  { label: 'Gross Price', value: '₹4.25 Crs' },
+  { label: 'Tenure', value: '5 Years' },
+  { label: 'IRR', value: '+25%' },
+  { label: 'CAGR', value: '+35%' },
+  { label: 'Equity Multiplier', value: '1.25x' },
+  { label: 'Super Builtup area', value: '2000 Sqft' },
+  { label: 'Strategy', value: 'Buy 2 Sell' },
+  { label: 'Price', value: '₹2000 /Sqft' },
+  { label: 'Value', value: 'Undervalued' },
+  { label: 'Loan percentage', value: '90%' },
+  { label: 'Loan Interest Rate', value: '8.5%' },
+  { label: 'Investment type', value: 'Full' },
     ],
-    amenities: [
-      { label: 'Club House', value: true },
-      { label: 'Gymnasium', value: true },
-      { label: 'Swimming Pool', value: true },
-      { label: 'Play Area', value: true },
-      { label: 'Rain Water Harvesting', value: true },
-      { label: 'Jogging Track', value: true },
-      { label: 'Yoga, Aerobics and Meditation Room', value: true },
-      { label: 'Spa', value: true },
-      { label: 'Electricity Backup', value: true },
+    cashFlowsTable: {
+      columns: ['Month 1', 'Month 2', 'Month 3'],
+      rowHeaders: ['Interest', 'Principal', 'Stamp Duty', 'Extra Charges', 'Reg. Charges'],
+      rows: [
+        [1.25, 1.30, 1.35],
+        [1.50, 1.55, 1.60],
+        [0.75, 0.80, 0.85],
+        [0.90, 0.95, 1.00],
+        [1.10, 1.15, 1.20],
+      ],
+    },
+    pointsList: {
+      trueStateSelected: ['Point 1', 'Point 2', 'Point 3'],
+      thingsToConsider: ['Point A', 'Point B', 'Point C'],
+    },
+    locationAnalysis: {
+      filters: {
+        Education: ['School', 'College'],
+        Transportation: ['Bus Stop', 'Train Station'],
+        // More filters...
+      },
+      defaultMarker: { lat: 50.879, lng: 4.6997 },
+      markers: {
+        School: [{ lat: 50.879, lng: 4.6997 }],
+        // More markers...
+      },
+    },
+    documents: ['Master Plan', 'Brochure'],
+    similarProperties:  [
+      {
+        name: 'Mahindra Zen',
+        location: 'Hsr layout',
+        config: '2 BHK',
+        unitPrice: '₹4.25 Crs',
+        stage: 'New Launch',
+        investmentAmount: '₹65.25 Lac',
+        targetPrice: '₹1.25 Cr'
+      },
+      {
+        name: 'Mahindra Zen',
+        location: 'Hsr layout',
+        config: '2 BHK',
+        unitPrice: '₹4.25 Crs',
+        stage: 'New Launch',
+        investmentAmount: '₹65.25 Lac',
+        targetPrice: '₹1.25 Cr'
+      },
+      {
+        name: 'Mahindra Zen',
+        location: 'Hsr layout',
+        config: '2 BHK',
+        unitPrice: '₹4.25 Crs',
+        stage: 'New Launch',
+        investmentAmount: '₹65.25 Lac',
+        targetPrice: '₹1.25 Cr'
+      }
     ],
-    builderDetails: [
-      { label: 'Builder Name', value: 'Mahindra' },
-      { label: 'Address', value: 'Bangalore, India' },
-      { label: 'Completed Projects', value: '10' },
-      { label: 'Ongoing Projects', value: '5' },
-      { label: 'Upcoming Projects', value: '3' },
+    gdata: [
+      { name: 'Down Payment', value: 2.25, color: '#04444E' },
+      { name: 'Interest', value: 0.75, color: '#FF5733' },
+      { name: 'Principal', value: 1.50, color: '#FFBD33' },
+      { name: 'Stamp Duty', value: 0.50, color: '#33FFF6' },
+      { name: 'Extra Charges', value: 1.00, color: '#FF33A1' },
+      { name: 'Reg. Charges', value: 0.5, color: '#F6FF33' }
     ],
+    investmentCalculator: {
+      configurations: [
+        { value: '1BHK', label: '1BHK (1000 sqft)' },
+        // More configurations...
+      ],
+      strategies: [
+        { value: 'buy', label: 'Buy' },
+        { value: 'rent', label: 'Rent' },
+        // More strategies...
+      ],
+      sliders: [
+        { name: 'tenure', label: 'Tenure', min: 1, max: 30, default: 15 },
+        // More sliders...
+      ],
+    },
+  };
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
   };
 
   const agents = [

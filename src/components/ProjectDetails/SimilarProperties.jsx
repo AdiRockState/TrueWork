@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-const SimilarProperties = ({ properties }) => {
-  const [data, setData] = useState(properties);
+const SimilarProperties = ({ similarProperties }) => {
   const [search, setSearch] = useState('');
+  const [filteredProperties, setFilteredProperties] = useState(similarProperties);
 
   const handleSearch = (event) => {
     const searchTerm = event.target.value.toLowerCase();
     setSearch(searchTerm);
-    setData(
-      properties.filter(property =>
+    setFilteredProperties(
+      similarProperties.filter(property =>
         property.name.toLowerCase().includes(searchTerm)
       )
     );
@@ -16,36 +16,83 @@ const SimilarProperties = ({ properties }) => {
 
   return (
     <div className="p-4 bg-white shadow rounded">
-      <h2 className="text-xl font-semibold mb-2">Similar Properties</h2>
-      <div className="overflow-auto">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-semibold">Similar Properties</h2>
+        <input
+          type="text"
+          value={search}
+          onChange={handleSearch}
+          placeholder="Search Project"
+          className="mt-4 p-2 border w-60 rounded"
+        />
+      </div>
+      <div className="overflow-x-auto">
         <table className="min-w-full bg-white border">
           <thead>
             <tr>
-              <th className="py-2 px-4 border">Name</th>
-              <th className="py-2 px-4 border">Location</th>
-              <th className="py-2 px-4 border">Price</th>
-              <th className="py-2 px-4 border">Area</th>
+              {filteredProperties.map((property, index) => (
+                <th key={index} className="py-2 px-4 border text-left">{property.name}</th>
+              ))}
+              <th className="py-2 px-4 border text-left"></th>
             </tr>
           </thead>
           <tbody>
-            {data.map((property, index) => (
-              <tr key={index}>
-                <td className="py-2 px-4 border">{property.name}</td>
-                <td className="py-2 px-4 border">{property.location}</td>
-                <td className="py-2 px-4 border">{property.price}</td>
-                <td className="py-2 px-4 border">{property.area}</td>
+            {['location', 'config', 'unitPrice', 'stage', 'investmentAmount', 'targetPrice'].map((field, rowIndex) => (
+              <tr key={rowIndex}>
+                {filteredProperties.map((property, colIndex) => (
+                  <td key={colIndex} className="py-2 px-4 border">
+                    {rowIndex === 0 && (
+                      <>
+                        <div className="text-sm font-semibold">Location</div>
+                        <div className="text-sm">{property.location}</div>
+                      </>
+                    )}
+                    {rowIndex === 1 && (
+                      <>
+                        <div className="text-sm font-semibold">Preferred Config.</div>
+                        <div className="text-sm">{property.config}</div>
+                      </>
+                    )}
+                    {rowIndex === 2 && (
+                      <>
+                        <div className="text-sm font-semibold">Unit Price</div>
+                        <div className="text-sm">{property.unitPrice}</div>
+                      </>
+                    )}
+                    {rowIndex === 3 && (
+                      <>
+                        <div className="text-sm font-semibold">Stage</div>
+                        <div className="text-sm">{property.stage}</div>
+                      </>
+                    )}
+                    {rowIndex === 4 && (
+                      <>
+                        <div className="text-sm font-semibold">Investment Amount</div>
+                        <div className="text-sm">{property.investmentAmount}</div>
+                      </>
+                    )}
+                    {rowIndex === 5 && (
+                      <>
+                        <div className="text-sm font-semibold">Target Price</div>
+                        <div className="text-sm">{property.targetPrice}</div>
+                      </>
+                    )}
+                  </td>
+                ))}
+                {rowIndex === 0 && (
+                  <td rowSpan={6} className="py-2 px-4 border">
+                    <div className="flex items-center justify-center h-full">
+                      <div className="rounded-full overflow-hidden w-16 h-16">
+                        <img src="path/to/image.jpg" alt="Property" className="object-cover w-full h-full" />
+                      </div>
+                    </div>
+                  </td>
+                )}
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <input
-        type="text"
-        value={search}
-        onChange={handleSearch}
-        placeholder="Search properties..."
-        className="mt-4 p-2 border w-full rounded"
-      />
     </div>
   );
 };
