@@ -11,16 +11,16 @@ const CashFlowsTable = ({ data }) => {
         <tr>
           <th className="px-3 py-2 border-b border-gray-300 text-left text-xs font-semibold tracking-wider">Category</th>
           {data.columns.map((col, index) => (
-            <th key={index} className="px-3 py-3 border-b border-gray-300 text-left text-xs font-semibold tracking-wider">{col}</th>
+            <th key={index} className={`px-3 py-3 border-b border-gray-300 text-left text-xs font-semibold tracking-wider`}>{col}</th>
           ))}
         </tr>
       </thead>
       <tbody>
         {data.rows.map((row, rowIndex) => (
           <tr key={rowIndex} className={`${rowIndex === data.rows.length - 1 ? 'rounded-b-lg' : ''}`}>
-            <td className={`px-3 py-2 ${rowIndex===data.rows.length -1 ?'':'border-b border-gray-300'}`}>{data.rowHeaders[rowIndex]}</td>
+            <td className={`px-3 py-2 ${rowIndex===data.rows.length -1 ?'rounded-bl-lg bg-gray-200':'border-b border-gray-300'}`}>{data.rowHeaders[rowIndex]}</td>
             {row.map((cell, cellIndex) => (
-              <td key={cellIndex} className={`px-3 py-2 ${rowIndex===data.rows.length -1 ?'':'border-b border-gray-300'}`}>{cell}</td>
+              <td key={cellIndex} className={`px-3 py-2 ${rowIndex===data.rows.length -1 ? cellIndex===row.length-1?'rounded-br-lg bg-gray-200':'bg-gray-200':'border-b border-gray-300'}`}>{cell}</td>
             ))}
           </tr>
         ))}
