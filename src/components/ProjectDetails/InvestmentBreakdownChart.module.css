@@ -16,7 +16,7 @@
   
   .chartBar {
     display: flex;
-    height: 1rem;
+    height: 0.5rem;
     border-radius: 1.25rem;
     overflow: hidden;
     margin-bottom: 1rem;
@@ -37,8 +37,47 @@
     font-size: 0.875rem;
   }
   
-  .totalAmount {
-    text-align: center;
+  .title{
+    color: var(--Neutrals-Base-Black, var(--Neutrals-Base-Black, #0A0B0A));
+    /* Heading / Bold / Small */
+    font-family: Montserrat;
     font-size: 1.125rem;
-    font-weight: bold;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+  }
+
+  .totalAmount{
+    color: var(--Neutrals-Base-Black, var(--Neutrals-Base-Black, #0A0B0A));
+    /* Paragraph / Bold / X Large  */
+    font-family: Lato;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 30px */
+  }
+
+  .header{
+    margin-bottom: 1.25rem;
+  }
+
+  .iname{
+    color: var(--Neutrals-Grey-700, var(--Neutrals-Neutrals700, #5A5555));
+    /* Heading/Semi-Bold/XXX Small */
+    font-family: Montserrat;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 18px */
+  }
+
+  .ival{
+    color: var(--Neutrals-Base-Black, var(--Neutrals-Base-Black, #0A0B0A));
+
+    /* Paragraph/Bold/Medium */
+    font-family: Lato;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
   }

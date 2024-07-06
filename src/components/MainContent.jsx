@@ -124,29 +124,31 @@ function MainContent() {
       { label: 'Builder category', value: 'Cat B' },
     ],
     investmentOverview: [
-      { label: 'Total Investment', value: '1.25 Cr' },
-      { label: 'Total Returns', value: '1.5 Cr' },
-      // More details...
-    ],
-    ganttChart: [
-      {
-        name: 'Task 1',
-        start: Date.UTC(2024, 6, 1),
-        end: Date.UTC(2024, 6, 15),
-      },
-      {
-        name: 'Task 2',
-        start: Date.UTC(2024, 6, 16),
-        end: Date.UTC(2024, 6, 30),
-      },
-      // More tasks...
+      { label: 'Preferred Config.', value: '2 BHK' },
+  { label: 'Investment Amount', value: '₹65.25 Lac' },
+  { label: 'Target Price', value: '₹3.25 Crs' },
+  { label: 'Gross Price', value: '₹4.25 Crs' },
+  { label: 'Tenure', value: '5 Years' },
+  { label: 'IRR', value: '+25%' },
+  { label: 'CAGR', value: '+35%' },
+  { label: 'Equity Multiplier', value: '1.25x' },
+  { label: 'Super Builtup area', value: '2000 Sqft' },
+  { label: 'Strategy', value: 'Buy 2 Sell' },
+  { label: 'Price', value: '₹2000 /Sqft' },
+  { label: 'Value', value: 'Undervalued' },
+  { label: 'Loan percentage', value: '90%' },
+  { label: 'Loan Interest Rate', value: '8.5%' },
+  { label: 'Investment type', value: 'Full' },
     ],
     cashFlowsTable: {
-      columns: ['Year', 'Down payment', 'Rental', 'Net EMI', 'Sale', 'Loan Payment at Sale', 'Net Cash Outflow'],
+      columns: ['Month 1', 'Month 2', 'Month 3'],
+      rowHeaders: ['Interest', 'Principal', 'Stamp Duty', 'Extra Charges', 'Reg. Charges'],
       rows: [
-        ['1', '14,25,000', '0', '0', '0', '0', '14,25,000'],
-        ['2', '0', '0', '0', '0', '0', '0'],
-        // More rows...
+        [1.25, 1.30, 1.35],
+        [1.50, 1.55, 1.60],
+        [0.75, 0.80, 0.85],
+        [0.90, 0.95, 1.00],
+        [1.10, 1.15, 1.20],
       ],
     },
     pointsList: {

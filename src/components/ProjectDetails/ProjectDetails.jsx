@@ -11,13 +11,14 @@ import SimilarProperties from './SimilarProperties';
 import InvestmentCalculator from './InvestmentCalculator';
 
 const gdata = [
-  { name: 'Interest', value: 1.25, color: '#FF5733' },
-  { name: 'Principal', value: 1.25, color: '#FFBD33' },
-  { name: 'Stamp Duty', value: 1.25, color: '#33FFF6' },
-  { name: 'Extra Charges', value: 1.25, color: '#FF33A1' },
-  { name: 'Reg. Charges', value: 1.25, color: '#F6FF33' }
+  { name: 'Down Payment', value: 2.25, color: '#04444E' },
+  { name: 'Interest', value: 0.75, color: '#FF5733' },
+  { name: 'Principal', value: 1.50, color: '#FFBD33' },
+  { name: 'Stamp Duty', value: 0.50, color: '#33FFF6' },
+  { name: 'Extra Charges', value: 1.00, color: '#FF33A1' },
+  { name: 'Reg. Charges', value: 0.5, color: '#F6FF33' }
 ];
-const total = 6.25;
+const total = gdata.reduce((sum, item) => sum + item.value, 0);
 
 const ProjectDetails = ({ data }) => (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -25,7 +26,6 @@ const ProjectDetails = ({ data }) => (
       <div className='h-full w-full md:w-3/4"'>
       <ImageCarousel images={data.images} />
       <Overview title="Project Overview" details={data.projectOverview} />
-      <Overview title="Investment Overview" details={data.investmentOverview} />
       <InvestmentBreakdownChart data={gdata} total={total} />
       <CashFlowsTable data={data.cashFlowsTable} />
       <PointsList title="Why True State Selected" points={data.pointsList.trueStateSelected} />
