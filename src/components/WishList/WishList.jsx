@@ -3,39 +3,41 @@ import axios from 'axios'; // If using axios
 import WishListTable from './WishListTable'; // Update with your actual component path
 
 const WishList = () => {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        // Load JSON file using fetch or axios
-        // Using fetch
-        const response = await fetch('/wishlist.json'); // Adjust the path as per your file location
-        if (!response.ok) {
-          throw new Error('Failed to fetch wishlist data');
-        }
-        const data = await response.json();
-        setProjects(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
+  const projects = [
+    {
+      projectName: 'Project A',
+      location: 'New York',
+      stage: 'Pre-Construction',
+      status: 'Not Interested',
+      addedBy: 'John Doe',
+      growth: 'High',
+      value: '$1,000,000',
+      pricePerSqft: '$500',
+      irr: '10%',
+      strategy: 'Long-term',
+      tenure: '5 years',
+      minInvest: '$50,000',
+      availability: 'Limited',
+      rera: 'Approved',
+    },
+    {
+      projectName: 'Project B',
+      location: 'Los Angeles',
+      stage: 'Under Construction',
+      status: 'Not Discussed',
+      addedBy: 'Jane Smith',
+      growth: 'Medium',
+      value: '$800,000',
+      pricePerSqft: '$450',
+      irr: '8%',
+      strategy: 'Short-term',
+      tenure: '3 years',
+      minInvest: '$30,000',
+      availability: 'High',
+      rera: 'Pending',
+    },
+  ];
+  
   return (
     <div className="container mx-auto px-4">
       <WishListTable projects={projects} />

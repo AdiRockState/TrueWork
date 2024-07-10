@@ -1,38 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 .table-container {
-    border-radius: 0.75rem;
-  }
-  
-  .project-table-header {
-    font-family: Montserrat;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 150%;
-    color: var(--Neutrals-Grey-600, var(--Neutrals-Neutrals600, #726C6C));
-  }
-  
-  .project-table-cell {
-    font-family: Lato;
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.5;
-    color: var(--Neutrals-Grey-900, var(--Neutrals-Neutrals900, #2B2928));
-  }
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  position: relative;
+}
+
+.project-table-header {
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 150%;
+  color: var(--Neutral-N600, #313534);
+  white-space: nowrap;
+  min-width: 5rem;
+}
+
+.project-table-cell {
+  font-family: Lato;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--Neutrals-Grey-1000, var(--Neutrals-Neutrals1000, #151413));
+  white-space: nowrap;
+}
 
 .status-cell {
-    border-radius: 4px;
-  }
-  
-  .status-not-interested {
-    background-color: var(--Error-Error200, #F9ABB9);
-  }
-  
-  .status-not-discussed {
-    background-color: var(--Alert-Alert300, #FBDD97);
-  }
-  
-  .status-default {
-    background-color: var(--Success-Success200, #B6F7D4);
-  }
-  
+  border-radius: 4px;
+}
+
+.status-not-interested {
+  background-color: var(--Error-Error200, #F9ABB9);
+}
+
+.status-not-discussed {
+  background-color: var(--Alert-Alert300, #FBDD97);
+}
+
+.status-default {
+  background-color: var(--Success-Success200, #B6F7D4);
+}
+
+.fixed-column {
+  position: sticky;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.first-column {
+  left: 0;
+  min-width: 7rem !important;
+  width: 7rem;
+}
+
+.last-column {
+  right: 0;
+  min-width: 7rem !important;
+  width: 7rem;
+}
